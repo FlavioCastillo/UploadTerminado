@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm("Index", "Importando", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.Raw(ViewBag.error)
+    <br />
+
+        <span>Excel File</span><input type="file" name="excelfile" />
+        <br />
+        <button class="btn btn-primary" type="submit">
+            Import
+        </button>@Html.ActionLink("Lista", "Importando")
+}
